@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Fix */
+html, body {
+  scroll-behavior: smooth;
+  transition: background-color 0.3s, color 0.3s;
+  overflow-x: hidden; /*  Prevent horizontal scroll (fix white line) */
+}
+
+/* Body Theme */
+body {
+  font-family: 'Inter', sans-serif;
+  @apply bg-gray-100 text-black dark:bg-[#0f172a] dark:text-white;
+}
+
+/* Universal Box Fix (recommended) */
+* {
+  box-sizing: border-box;
+}
+
+/* About Section Glow */
+.shadow-glow {
+  box-shadow: 0 0 30px rgba(0, 188, 212, 0.3),
+              0 0 60px rgba(255, 64, 129, 0.2);
+}
+
+/* Floating Animation */
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.animate-floaty {
+  animation: floaty 6s ease-in-out infinite;
+}
