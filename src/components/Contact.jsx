@@ -41,18 +41,19 @@ export default function Contact() {
   }
 
     try {
-      // 1️⃣ Send main email to you
+      // 1️⃣ Send main email to you for security reason i have paste these values in .env file
       await emailjs.sendForm(
-        "service_ngir6pm", // Replace with your actual service ID
-        "template_vm5s7js", // Replace with your main template ID
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         form.current,
-        "ewO1ZU9XS6a1QfYb5" // Replace with your actual public key
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
 
       // 2️⃣ Send auto-reply to the user
       await emailjs.send(
-        "service_ngir6pm", // Same service ID
-        "template_ntrb0ou", // Replace with auto-reply template ID
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_AUTO_REPLY_TEMPLATE,
+        
         {
           first_name: formData.get("first_name"),
           last_name: formData.get("last_name"),
@@ -60,7 +61,7 @@ export default function Contact() {
           message: formData.get("message"),
           user_email: formData.get("user_email"), // This goes to the user
         },
-        "ewO1ZU9XS6a1QfYb5" // Same public key
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY // Same public key
       );
 
       toast.success("Thanks! I'll get back to you soon 😊");
