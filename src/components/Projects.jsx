@@ -63,7 +63,7 @@ export default function Projects() {
             {/* Screenshot */}
             <div className="relative">
               <img
-                src={mainProject.image}
+                src="/image.png"
                 alt={mainProject.name}
                 className="w-full h-96 object-cover rounded-t-3xl group-hover:scale-105 transition-transform duration-500"
               />
