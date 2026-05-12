@@ -22,8 +22,8 @@ body {
 
 /* About Section Glow */
 .shadow-glow {
-  box-shadow: 0 0 30px rgba(0, 188, 212, 0.3),
-              0 0 60px rgba(255, 64, 129, 0.2);
+  box-shadow: 0 0 10px rgba(0, 188, 212, 0.3),
+              0 0 20px rgba(255, 64, 129, 0.2);
 }
 
 /* Floating Animation */
@@ -34,4 +34,40 @@ body {
 
 .animate-floaty {
   animation: floaty 6s ease-in-out infinite;
+}
+/* Cirtificate section */
+/* Auto scroll */
+@keyframes autoScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-autoScroll {
+  animation: autoScroll 25s linear infinite;
+}
+
+.animate-autoScroll:hover {
+  animation-play-state: paused;
+}
+
+/* Thin glowing border */
+@keyframes borderGlow {
+  0% {
+    background: linear-gradient(90deg, #00f0ff, #ff00ff);
+  }
+  50% {
+    background: linear-gradient(90deg, #00ff94, #00f0ff);
+  }
+  100% {
+    background: linear-gradient(90deg, #ff00ff, #00ff94);
+  }
+}
+
+.animate-border {
+  animation: borderGlow 3s linear infinite;
+  border-radius: 16px;
 }

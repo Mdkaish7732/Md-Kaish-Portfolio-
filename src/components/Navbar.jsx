@@ -5,7 +5,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   // for Dark Mode Togal
   const { darkMode, toggleTheme } = useContext(ThemeContext);
-  const links = ["home", "about", "skills", "projects", "contact"];
+  const links = ["home", "about", "skills", "projects","Certifications","contact"];
   
 
   return (
